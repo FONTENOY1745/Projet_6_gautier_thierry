@@ -8,8 +8,11 @@ const Thing = require("./models/sauce");
 
 mongoose
   .connect(
-    "mongodb+srv://READWRITEUSER:Vincenti012)@cluster0.6ia1x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    "mongodb+srv://READWRITEUSER:Vincenti012)@cluster0.6ia1x.mongodb.net/myFirstDatabase?Retrywrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
   )
   .then(() => console.log("Connexion à MongoDB réussie!"))
   .catch(() => console.log("Connexion à MongoDB échouée!"));

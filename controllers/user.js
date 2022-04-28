@@ -60,7 +60,7 @@ exports.signup = (req, res, next) => {
       .then((hash) => {
         const user = new User({
           // On crée un nouveau user
-          email: maskedMail,
+          email: req.body.email,
           // Constatation de l'adresse e-mail masquée
           password: hash,
         });
@@ -79,7 +79,7 @@ exports.signup = (req, res, next) => {
 exports.login = (req, res, next) => {
   // connexion de l'utilisateur
   const maskedMail = MaskData.maskEmail2(req.body.email);
-  User.findOne({ email: maskedMail })
+  User.findOne({ email: req.body.email })
     // On vérifie que l'adresse e-mail figure bien dan la database
     .then((user) => {
       if (!user) {
