@@ -34,7 +34,6 @@ passwordSchema
   .symbols();
 // Pas de caractères spéciaux
 //.Aucun().espace()
-// Ne pas avoir d'espace est une mauvaise règle
 
 exports.signup = (req, res, next) => {
   // Saisie de l'identifiant
